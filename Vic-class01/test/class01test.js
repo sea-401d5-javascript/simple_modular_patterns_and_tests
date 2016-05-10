@@ -1,6 +1,6 @@
 const chai = require ('chai');
 const expect = chai.expect;
-const hello = require('../salutations/hello');
+const hello = require('../lib/hello');
 
 describe ('Greeting Object', () => {
   it('Type of object is greeting', () => {
