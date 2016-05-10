@@ -1,7 +1,17 @@
-exports = module.exports = {};
+// exports = module.exports = {};
+//
+// exports.type = 'Player';
+//
+// exports.greet = function (name) {
+//   return 'Hello' + name;
+// };
 
-exports.type = 'Player';
+'use strict';
 
-exports.greet = function (name) {
-  return 'Hello' + name;
+const greet = module.exports = function() {
+
+
+  return `HI ${process.argv[2] || 'Dave'}`;
 };
+
+console.log(greet());
