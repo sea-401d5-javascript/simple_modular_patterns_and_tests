@@ -1,0 +1,24 @@
+{
+  "name": "greetings",
+  "version": "0.1.0",
+  "description": "Program that greets anyone that wishes so",
+  "main": "greet.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-mocha": "^2.2.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Chuang",
+  "license": "ISC"
+}
