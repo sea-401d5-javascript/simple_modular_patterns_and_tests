@@ -1,16 +1,21 @@
 const gulp = require('gulp');
-const eslint = require('eslint');
+const eslint = require('gulp-eslint');
+const mocha = require('gulp-mocha');
+const watch = require('gulp-watch');
 
-gulp.task('first_task', () => {
-  console.log('FIRST TASK');
-});
-
-gulp.task('default', ['first_task'], () => {
-  console.log('SECOND TASK');
+gulp.task('default', ['lint', 'test'], () => {
+  console.log('started');
 });
 
 gulp.task('lint', () => {
-  gulp.src('./hello.js')
+  gulp.src('lib/hello.js')
   .pipe(eslint())
-  .pipe(eslint.format())
+  .pipe(eslint.format());
 });
+
+gulp.task('test', () => {
+  gulp.src('test/*.js')
+  .pipe(mocha());
+});
+
+gulp.watch('./**/*.js', ['lint', 'test'])
