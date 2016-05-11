@@ -9,7 +9,7 @@ gulp.task('default',['Mochai','lint','watch'],()=> {
 });
 
 gulp.task('Mochai', ()=> {
-  gulp.src('./test/greetTest.js')
+  gulp.src('./test/*.js')
   .pipe(mocha());
 });
 
@@ -25,9 +25,9 @@ gulp.task('lint', ()=> {
     console.log('Total warnings: ' + results.warningCount);
     console.log('Total errors: ' + results.errorCount);
   }));
-  console.log('Finshed linting');
 });
 
 gulp.task('watch', ()=>{
-  gulp.watch(['./greet.js','./test/greetTest.js','./gulpfile.js'], ['lint']);
+//  gulp.watch(['./greet.js','./test/greetTest.js','./gulpfile.js'], ['Mochai','lint']);
+  gulp.watch(['./*.js','./test/*.js'],['lint','Mochai']);
 });
